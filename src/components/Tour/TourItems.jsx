@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTourItems } from "../../reducers/tourReducer";
 import { TourItem } from "./TourItem";
 import { Link } from "react-router-dom";
+import { sortByDate } from "../../utils/common";
 
 export const TourItems = () => {
 
@@ -16,9 +17,11 @@ export const TourItems = () => {
     dispatch(getTourItems);
   }, [dispatch]);
 
-  const filtered = items
+  const filtered = sortByDate(
+    items
     .filter(({soldOut, ticketLink}) => !soldOut && ticketLink)
     .filter((_, i) => i < 5)
+  );
 
   return (
     <Section className='tour'>
