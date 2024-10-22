@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react"
 import { Link } from "react-router-dom";
 import ScrollAnimation from "react-animate-on-scroll";
 
-import { getTracksItems } from "../../reducers/tracksReducer";
 import { getLocaleDateString } from "../../utils/common";
 
 import { Section } from "../Section/Section";
 import { SectionTitle } from "../Title/SectionTitle";
 import { Icon } from "../Icon/Icon";
 import { Loader } from "../Loader/Loader";
+import { useTrackItems } from "../../hooks/useTrackItems";
 
 export const Tracks = () => {
 
-  const dispatch = useDispatch();
-  const {items = [], isLoading} = useSelector(({tracks}) => tracks);
+  const {items = [], isLoading} = useTrackItems();
 
   const [audio] = useState(new Audio());
   const [playing, setPlaying] = useState(false);
@@ -33,10 +31,6 @@ export const Tracks = () => {
 
     setCurrentTrack(track);
   };
-
-  useEffect(() => {
-    dispatch(getTracksItems())
-  }, [dispatch]);
 
   return (
     <Section className="tracks-section">
