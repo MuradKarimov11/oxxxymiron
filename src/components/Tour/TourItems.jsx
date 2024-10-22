@@ -1,11 +1,14 @@
 import { useEffect } from "react";
-import { Section } from "../Section/Section";
-import { SectionTitle } from "../Title/SectionTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { getTourItems } from "../../reducers/tourReducer";
-import { TourItem } from "./TourItem";
 import { Link } from "react-router-dom";
+
+import { getTourItems } from "../../reducers/tourReducer";
 import { sortByDate } from "../../utils/common";
+
+import { Section } from "../Section/Section";
+import { Loader } from "../Loader/Loader";
+import { TourItem } from "./TourItem";
+import { SectionTitle } from "../Title/SectionTitle";
 
 export const TourItems = () => {
 
@@ -27,7 +30,7 @@ export const TourItems = () => {
     <Section className='tour'>
       <div className="container">
         <SectionTitle text="Концерты"/>
-        {isLoading ? "LOADING" : (
+        {isLoading ? (<Loader/>) : (
           <ul className="tour-list">
             {filtered.map((item, i) => <TourItem {...item} i={i} key={item.sys.id}/>)}
           </ul>

@@ -9,6 +9,7 @@ import { getLocaleDateString } from "../../utils/common";
 import { Section } from "../Section/Section";
 import { SectionTitle } from "../Title/SectionTitle";
 import { Icon } from "../Icon/Icon";
+import { Loader } from "../Loader/Loader";
 
 export const Tracks = () => {
 
@@ -41,8 +42,8 @@ export const Tracks = () => {
     <Section className="tracks-section">
       <div className="container">
         <SectionTitle text="Релизы"/>
-        {isLoading? (
-          'Loading'
+        {isLoading ? (
+          <Loader/>
         ) : (
           items
             .filter((_, i) => i < 3)

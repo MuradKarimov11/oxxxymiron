@@ -10,6 +10,7 @@ import {getNewsItems} from '../../reducers/newsReducer';
 import { Section } from "../Section/Section";
 import { SectionTitle } from "../Title/SectionTitle";
 import Icon from '../Icon/Icon';
+import Loader from "../Loader/Loader";
 
 import "swiper/css";
 
@@ -44,8 +45,8 @@ export const News = () => {
             <div className="container">
                 <SectionTitle text="Новости"/>
 
-                {isLoading? (
-                    'Loading'
+                {isLoading ? (
+                    <Loader/>
                 ) : (
                     <Swiper
                         ref={sliderRef}
