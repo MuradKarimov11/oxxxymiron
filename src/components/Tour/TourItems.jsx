@@ -1,24 +1,17 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { getTourItems } from "../../reducers/tourReducer";
 import { sortByDate } from "../../utils/common";
+import { useTourItems } from "../../hooks/useTourItems";
 
 import { Section } from "../Section/Section";
 import { Loader } from "../Loader/Loader";
 import { TourItem } from "./TourItem";
 import { SectionTitle } from "../Title/SectionTitle";
 
+
 export const TourItems = () => {
 
-  const dispatch = useDispatch();
-
-  const {items = [], isLoading} = useSelector(({tour}) => tour);
-
-  useEffect(() => {
-    dispatch(getTourItems);
-  }, [dispatch]);
+  const {items = [], isLoading} = useTourItems()
 
   const filtered = sortByDate(
     items
