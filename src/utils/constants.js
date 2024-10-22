@@ -46,3 +46,8 @@ export const SOCIALS = [
     },
 ];
 
+
+export const SLIDER_BUTTON_TYPES = {
+  NEXT: "NEXT",
+  PREV: "PREV",
+};
