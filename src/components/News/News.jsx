@@ -7,8 +7,8 @@ import { Navigation } from "swiper/modules";
 
 import { Section } from "../Section/Section";
 import { SectionTitle } from "../Title/SectionTitle";
-import Icon from '../Icon/Icon';
-import Loader from "../Loader/Loader";
+import {Icon} from '../Icon/Icon';
+import {Loader} from "../Loader/Loader";
 
 import "swiper/css";
 

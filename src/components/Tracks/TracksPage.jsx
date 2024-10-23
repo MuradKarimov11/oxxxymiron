@@ -3,9 +3,9 @@ import { useTrackItems } from "../../hooks/useTrackItems"
 
 import { getLocaleDateString } from "../../utils/common";
 
-import PageTitle from '../Title/PageTitle';
-import Loader from '../Loader/Loader';
-import Icon from '../Icon/Icon';
+import {PageTitle} from '../Title/PageTitle';
+import {Loader} from '../Loader/Loader';
+import {Icon} from '../Icon/Icon';
 
 
 export const TracksPage = () => {

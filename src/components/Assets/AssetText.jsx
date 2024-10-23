@@ -1,4 +1,4 @@
 
-export const AssetsText = ({value}) => (
+export const AssetText = ({value}) => (
     <span  dangerouslySetInnerHTML={{ __html: value.replaceAll("\n\n", "<br />") }}/>
 )

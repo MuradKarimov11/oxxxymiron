@@ -1,6 +1,6 @@
 import { FooterForm } from "./FooterForm"
-import Logo from "../Logo/Logo";
-import Socials from "../Socials/Socials";
+import {Logo} from "../Logo/Logo";
+import {Socials} from "../Socials/Socials";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
@@ -12,7 +12,7 @@ export const Footer = () => {
           <FooterForm />
 
           <div className="footer-info">
-            <Logo />
+            <Logo/>
             <p>OXXXYMIRON, {year}</p>
           </div>
 

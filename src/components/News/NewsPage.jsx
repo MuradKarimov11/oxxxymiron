@@ -5,7 +5,7 @@ import { getLocaleDateString } from "../../utils/common";
 
 import { Loader } from "../Loader/Loader";
 import { PageTitle } from "../Title/PageTitle";
-import Icon from '../Icon/Icon';
+import {Icon} from '../Icon/Icon';
 
 export const NewsPage = () => {
 

@@ -1,5 +1,5 @@
-import { Assets } from "../components/Assets/Assets";
-import { AssetsText } from "../components/Assets/AssetsText";
+import { Asset } from "../components/Assets/Asset";
+import { AssetText } from "../components/Assets/AssetText";
 import { AssetHeading } from "../components/Assets/AssetHeading";
 import { AssetLink } from "../components/Assets/AssetLink";
 
@@ -47,13 +47,13 @@ export const renderNode = ({ nodeType, data, value, content }, i) => {
             return <p key={key}>{content.map(renderNode)}</p>;
 
         case "text":
-            return <AssetsText key={key} value={value} />;
+            return <AssetText key={key} value={value} />;
 
         case "heading-3":
             return <AssetHeading key={key} content={content} />;
 
         case "embedded-asset-block":
-            return <Assets key={key} id={data.target.sys.id} />;
+            return <Asset key={key} id={data.target.sys.id} />;
 
         case "hyperlink":
             return <AssetLink key={key} uri={data.uri} content={content} />;

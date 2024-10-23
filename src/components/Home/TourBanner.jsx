@@ -2,7 +2,7 @@ import { Section } from "../Section/Section"
 
 import video from "../../images/oxxxytour.mp4";
 
-export const VideoBanner = () => {
+export const TourBanner = () => {
     return (
         <Section className="tour-banner">
             <div className="container">

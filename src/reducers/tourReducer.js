@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export const getTourItems = createAsyncThunk(
-    "tourItems/getTourItems", 
+    "tourItems/getTourItems",
     async (_, thunkAPI) => {
         try {
             const data = await request(tourItemCollectionQuery);
@@ -20,8 +20,8 @@ export const getTourItems = createAsyncThunk(
         } catch (err) {
             return thunkAPI.rejectWithValue(err);
         }
-    }    
-)
+    }
+);
 
 const tourItemsSlice = createSlice({
     name: 'tourItems',

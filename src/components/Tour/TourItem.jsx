@@ -1,6 +1,6 @@
 import ScrollAnimation from "react-animate-on-scroll"
 
-import Icon from '../Icon/Icon';
+import {Icon} from '../Icon/Icon';
 
 export const TourItem = ({
   date,

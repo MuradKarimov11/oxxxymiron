@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { getAsset } from "../../utils/common";
 
-const Asset = ({ id }) => {
+export const Asset = ({ id }) => {
   const [asset, setAsset] = useState(null);
 
   useEffect(() => {
@@ -18,5 +18,3 @@ const Asset = ({ id }) => {
 
   return asset ? <img src={asset} alt="" /> : <></>;
 };
-
-export default Asset;
