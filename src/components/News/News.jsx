@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useRef } from "react";
 import Swiper from "swiper";
 import { SwiperSlide } from "swiper/react";
 import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 
-import {getNewsItems} from '../../reducers/newsReducer';
 import { Section } from "../Section/Section";
 import { SectionTitle } from "../Title/SectionTitle";
 import Icon from '../Icon/Icon';
@@ -15,6 +13,7 @@ import Loader from "../Loader/Loader";
 import "swiper/css";
 
 import { SLIDER_BUTTON_TYPES } from "../../utils/constants";
+import { useNewsItems } from "../../hooks/useNewsItems";
 
 export const News = () => {
 
@@ -22,12 +21,7 @@ export const News = () => {
 
     const sliderRef = useRef();
 
-    const dispatch = useDispatch();
-    const {items = [], isLoading} = useSelector(({news}) => news);
-
-    useEffect(() => {
-        dispatch(getNewsItems())
-    }, [dispatch]);
+    const {items = [], isLoading} = useNewsItems();
 
     const handleButtonClick = useCallback(
         (type) => {
